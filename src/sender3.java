@@ -1,8 +1,8 @@
 public class sender3 extends Protocol {
         public static void main(String args[]) throws Exception
         {       int next_frame_to_send;
-                Frame r = new Frame(777);
-                Frame s = new Frame(666);
+                Frame r = new Frame(7777);
+                Frame s = new Frame(6666);
                 String buffer;
                 int event;
 
@@ -11,7 +11,7 @@ public class sender3 extends Protocol {
                 while (true)
                 {       s.info = buffer;
                         s.seq = next_frame_to_send;
-                        s.to_physical_layer("localhost", 888);
+                        s.to_physical_layer("localhost", 8888);
                         r.start_timer(r.seq);
                         event = r.wait_for_event();
                         if (event == frame_arrival)
