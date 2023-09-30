@@ -10,7 +10,7 @@ public class sender2 extends Protocol {
         while (true) {
             buffer = from_network_layer(); //get something to send.
             s.info = buffer; //prepare for transmission.
-            s.to_physical_layer("localhost", 8888); //send the frame.
+            s.to_physical_layer("192.168.0.11", 8888); //send the frame.
             event = r.wait_for_event(); //wait for the go ahead from receiver.
         }
     }

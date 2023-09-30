@@ -10,7 +10,7 @@ public class receiver2 extends Protocol {
             event = r.wait_for_event(); //wait for fram arrival.
             r.from_physical_layer();// get inbound frame.
             to_network_layer(r.info); //pass the data to network layer.
-            s.to_physical_layer("localhost", 7777); //awaken the sender with a dummy frame.
+            s.to_physical_layer("192.168.0.10", 7777); //awaken the sender with a dummy frame.
         }
     }
 }
