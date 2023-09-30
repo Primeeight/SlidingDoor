@@ -14,7 +14,7 @@ public class protocol4B extends Protocol {
         s.info = buffer;
         s.seq = next_frame_to_send;
         s.ack = 1 - frame_expected;
-        s.to_physical_layer("localhost", 7777);
+        s.to_physical_layer("192.168.0.11", 7777);
         r.start_timer(r.seq);
         while (true) {
             event = r.wait_for_event();
@@ -34,7 +34,7 @@ public class protocol4B extends Protocol {
             s.info = buffer;
             s.seq = next_frame_to_send;
             s.ack = 1 - frame_expected;
-            s.to_physical_layer("localhost", 7777);
+            s.to_physical_layer("192.168.0.11", 7777);
             s.start_timer(s.seq);
         }
     }
