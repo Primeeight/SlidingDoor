@@ -3,20 +3,19 @@
  */
 public class protocol4A extends Protocol {
     public static void main(String args[]) throws Exception {
-        int next_frame_to_send;
-        int frame_expected;
+        int next_frame_to_send=0;
+        int frame_expected=0;
         Frame r = new Frame(7777);
         Frame s = new Frame(6666);
         String buffer;
         int event;
 
-        next_frame_to_send = 0;
-        frame_expected = 0;
+
         buffer = from_network_layer();
         s.info = buffer;
         s.seq = next_frame_to_send;
         s.ack = 1 - frame_expected;
-        s.to_physical_layer("localhost", 5555);
+        s.to_physical_layer("192.168.0.10", 5555);
         r.start_timer(r.seq);
         while (true) {
             event = r.wait_for_event();
@@ -36,7 +35,7 @@ public class protocol4A extends Protocol {
             s.info = buffer;
             s.seq = next_frame_to_send;
             s.ack = 1 - frame_expected;
-            s.to_physical_layer("localhost", 5555);
+            s.to_physical_layer("192.168.0.10", 5555);
             s.start_timer(s.seq);
         }
     }

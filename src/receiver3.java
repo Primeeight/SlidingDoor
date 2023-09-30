@@ -16,7 +16,7 @@ public class receiver3 extends Protocol {
                                            (frame_expected + 1) % 2;
                                 }
                                 s.ack = 1 - frame_expected;
-                                s.to_physical_layer("localhost", 7777);
+                                s.to_physical_layer("192.168.0.10", 7777);
                         }
                 }
         }

@@ -3,15 +3,13 @@
  */
 public class protocol4B extends Protocol {
     public static void main(String args[]) throws Exception {
-        int next_frame_to_send;
-        int frame_expected;
+        int next_frame_to_send= 0;
+        int frame_expected= 0;
         Frame r = new Frame(5555);
         Frame s = new Frame(4444);
         String buffer;
         int event;
 
-        next_frame_to_send = 0;
-        frame_expected = 0;
         buffer = from_network_layer();
         s.info = buffer;
         s.seq = next_frame_to_send;

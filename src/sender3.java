@@ -11,7 +11,7 @@ public class sender3 extends Protocol {
                 while (true)
                 {       s.info = buffer;
                         s.seq = next_frame_to_send;
-                        s.to_physical_layer("localhost", 8888);
+                        s.to_physical_layer("192.168.0.11", 8888);
                         r.start_timer(r.seq);
                         event = r.wait_for_event();
                         if (event == frame_arrival)
