@@ -18,6 +18,7 @@ public class protocol4B extends Protocol {
         r.start_timer(r.seq);
         while (true) {
             event = r.wait_for_event();
+            if (event != frame_arrival) System.out.println("timeout");
             if (event == frame_arrival) {
                 r.from_physical_layer();
                 if (r.seq == frame_expected) {
