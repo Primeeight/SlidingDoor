@@ -19,7 +19,6 @@ public class protocol4A extends Protocol {
         r.start_timer(r.seq);
         while (true) {
             event = r.wait_for_event();
-            if (event != frame_arrival) System.out.println("timeout");
             if (event == frame_arrival) {
                 r.from_physical_layer();
                 if (r.seq == frame_expected) {
@@ -33,6 +32,7 @@ public class protocol4A extends Protocol {
                     }
                 }
             }
+            if (event != frame_arrival) System.out.println("timeout");
             s.info = buffer;
             s.seq = next_frame_to_send;
             s.ack = 1 - frame_expected;
